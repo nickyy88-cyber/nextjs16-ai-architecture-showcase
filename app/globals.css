@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  /* Shadcn UI Colors - Mapped to @theme variables */
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.129 0.042 264.695);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.129 0.042 264.695);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.129 0.042 264.695);
+  --color-primary: oklch(0.208 0.042 265.755);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.967 0.001 286.375);
+  --color-secondary-foreground: oklch(0.208 0.042 265.755);
+  --color-muted: oklch(0.967 0.001 286.375);
+  --color-muted-foreground: oklch(0.554 0.046 257.417);
+  --color-accent: oklch(0.967 0.001 286.375);
+  --color-accent-foreground: oklch(0.208 0.042 265.755);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.929 0.013 255.508);
+  --color-input: oklch(0.929 0.013 255.508);
+  --color-ring: oklch(0.208 0.042 265.755);
+  --color-radius: 0.625rem;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: oklch(0.129 0.042 264.695);
+    --color-foreground: oklch(0.985 0 0);
+    --color-card: oklch(0.129 0.042 264.695);
+    --color-card-foreground: oklch(0.985 0 0);
+    --color-popover: oklch(0.129 0.042 264.695);
+    --color-popover-foreground: oklch(0.985 0 0);
+    --color-primary: oklch(0.985 0 0);
+    --color-primary-foreground: oklch(0.208 0.042 265.755);
+    --color-secondary: oklch(0.279 0.041 260.031);
+    --color-secondary-foreground: oklch(0.985 0 0);
+    --color-muted: oklch(0.279 0.041 260.031);
+    --color-muted-foreground: oklch(0.704 0.04 256.788);
+    --color-accent: oklch(0.279 0.041 260.031);
+    --color-accent-foreground: oklch(0.985 0 0);
+    --color-destructive: oklch(0.396 0.141 25.723);
+    --color-destructive-foreground: oklch(0.985 0 0);
+    --color-border: oklch(0.279 0.041 260.031);
+    --color-input: oklch(0.279 0.041 260.031);
+    --color-ring: oklch(0.446 0.043 257.281);
+  }
+}
+
+/* For manual dark mode toggle */
+.dark {
+  --color-background: oklch(0.129 0.042 264.695) !important;
+  --color-foreground: oklch(0.985 0 0) !important;
+  --color-card: oklch(0.129 0.042 264.695) !important;
+  --color-card-foreground: oklch(0.985 0 0) !important;
+  --color-popover: oklch(0.129 0.042 264.695) !important;
+  --color-popover-foreground: oklch(0.985 0 0) !important;
+  --color-primary: oklch(0.985 0 0) !important;
+  --color-primary-foreground: oklch(0.208 0.042 265.755) !important;
+  --color-secondary: oklch(0.279 0.041 260.031) !important;
+  --color-secondary-foreground: oklch(0.985 0 0) !important;
+  --color-muted: oklch(0.279 0.041 260.031) !important;
+  --color-muted-foreground: oklch(0.704 0.04 256.788) !important;
+  --color-accent: oklch(0.279 0.041 260.031) !important;
+  --color-accent-foreground: oklch(0.985 0 0) !important;
+  --color-destructive: oklch(0.396 0.141 25.723) !important;
+  --color-destructive-foreground: oklch(0.985 0 0) !important;
+  --color-border: oklch(0.279 0.041 260.031) !important;
+  --color-input: oklch(0.279 0.041 260.031) !important;
+  --color-ring: oklch(0.446 0.043 257.281) !important;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Dot pattern background for light mode */
+body {
+  background-image: radial-gradient(hsl(var(--color-border)) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Remove dot pattern for dark mode */
+.dark body {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
